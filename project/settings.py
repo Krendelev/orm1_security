@@ -33,6 +33,8 @@ TEMPLATES = [
 
 USE_TZ = True
 
+TIME_ZONE = "Europe/Moscow"
+
 USE_L10N = True
 
 LANGUAGE_CODE = "ru-ru"
