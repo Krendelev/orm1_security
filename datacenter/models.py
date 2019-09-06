@@ -21,16 +21,16 @@ class Visit(models.Model):
     entered_at = models.DateTimeField()
     leaved_at = models.DateTimeField(null=True)
 
-    def calculate_duration(self):
+    def get_duration(self):
         departure = self.leaved_at or timezone.now()
         return departure - self.entered_at
 
-    def get_duration(self):
-        duration = self.calculate_duration()
+    def get_formatted_duration(self):
+        duration = self.get_duration()
         return "{num[0]}:{num[1]}".format(num=str(duration).split(":"))
 
     def is_long(self, minutes=60):
-        return self.calculate_duration().total_seconds() > minutes * 60
+        return self.get_duration().total_seconds() > minutes * 60
 
     def __str__(self):
         return "{user} entered at {entered} {leaved}".format(
