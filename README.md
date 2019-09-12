@@ -1,22 +1,37 @@
-# ORM task 1
+# Пульт охраны банка
 
-The first task from ORM module.
+Это внутренний репозиторий для сотрудников банка «Сияние». Если вы попали в этот репозиторий случайно, то не сможете его запустить, т.к. у вас нет доступа к БД, но можете свободно использовать код вёрстки или посмотреть как реализованы запросы к БД.
 
-### How to install
+Пульт охраны — это сайт, который можно подключить к удалённой базе данных с визитами и карточками пропуска сотрудников нашего банка.
 
-Python3 should be already installed.
-Then use `pip` (or `pip3`, if there is a conflict with Python2) to install dependencies:
+### Как установить
 
+Запросите доступ к БД у менеджера вашего банка. Для доступа вам понадобятся хост, порт, название базы данных, имя и пароль пользователя. Сохраните эти данные в файле `.env` в корневой папке проекта.
 ```bash
-pip install -r requirements.txt
+DB_HOST=my.host.add.ress
+DB_PORT=port_number
+DB_NAME=db_name
+DB_USER=login
+DB_PASSWORD=password
 ```
 
-### Usage
+Python3 должен быть уже установлен.
+Затем используйте `pip` (или `pip3`, есть конфликт с Python2) для установки зависимостей:
 
 ```bash
-$ python main.py
+$ pip install -r requirements.txt
 ```
 
-### Project Goals
+### Использование
 
-The code is written for educational purposes on online-course for web-developers [dvmn.org](https://dvmn.org/).
+Запустите сайт.
+
+```bash
+$ python manage.py runserver 0.0.0.0:8000
+```
+
+Наберите в браузере адрес `http://0.0.0.0:8000/`, сайт готов к использованию.
+
+### Цель проекта
+
+Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
